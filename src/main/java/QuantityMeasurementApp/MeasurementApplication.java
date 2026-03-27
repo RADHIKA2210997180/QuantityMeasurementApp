@@ -6,49 +6,128 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MeasurementApplication {
 
 	
-	    // Inner class Feet
-	    static class Feet {
-	        private final double value; 
+	static class Feet {
 
-	        // Constructor
-	        public Feet(double value) {
-	            this.value = value;
-	        }
+        private final double value;
 
-	        // Override equals method
-	        @Override
-	        public boolean equals(Object obj) {
 
-	            // Check if same reference
-	            if (this == obj) {
-	                return true;
-	            }
 
-	            // Check for null or different class
-	            if (obj == null || getClass() != obj.getClass()) {
-	                return false;
-	            }
+        public Feet(double value) {
 
-	            // Cast object to Feet
-	            Feet other = (Feet) obj;
+            this.value = value;
 
-	            // Compare values using Double.compare
-	            return Double.compare(this.value, other.value) == 0;
-	        }
-	      
+        }
 
-	    // Main method
-	    public static void main(String[] args) {
 
-	        // Creating two Feet objects
-	        Feet f1 = new Feet(1.0);
-	        Feet f2 = new Feet(1.0);
-	        
 
-	       
-	       
-	        System.out.println(f1.equals(f2));
-	    }
-	}
+        @Override
+
+        public boolean equals(Object obj) {
+
+            if (this == obj) return true;
+
+
+
+            if (obj == null || getClass() != obj.getClass())
+
+                return false;
+
+
+
+            Feet other = (Feet) obj;
+
+            return Double.compare(this.value, other.value) == 0;
+
+        }
+
+    }
+
+
+
+    // Inner class for Inches
+
+    static class Inches {
+
+        private final double value;
+
+
+
+        public Inches(double value) {
+
+            this.value = value;
+
+        }
+
+
+
+        @Override
+
+        public boolean equals(Object obj) {
+
+            if (this == obj) return true;
+
+
+
+            if (obj == null || getClass() != obj.getClass())
+
+                return false;
+
+
+
+            Inches other = (Inches) obj;
+
+            return Double.compare(this.value, other.value) == 0;
+
+        }
+
+    }
+
+
+
+    // Method to test Feet equality
+
+    public static void testFeetEquality() {
+
+        Feet f1 = new Feet(5.0);
+
+        Feet f2 = new Feet(5.0);
+
+
+
+        System.out.println("Feet equal? " + f1.equals(f2));
+
+    }
+
+
+
+    // Method to test Inches equality
+
+    public static void testInchesEquality() {
+
+        Inches i1 = new Inches(10.0);
+
+        Inches i2 = new Inches(10.0);
+
+        Inches i3 = new Inches(12.0);
+
+
+
+        System.out.println("Inches equal (same values)? " + i1.equals(i2));
+
+        System.out.println("Inches equal (different values)? " + i1.equals(i3));
+
+    }
+
+
+
+    // Main method
+
+    public static void main(String[] args) {
+
+        testFeetEquality();
+
+        testInchesEquality();
+
+    }
 
 }

@@ -45,4 +45,63 @@ class MeasurementApplicationTests {
     
     }
 
+    void testInchesEquality_SameValue() {
+
+    	MeasurementApplication.Inches i1 = new MeasurementApplication.Inches(10.5);
+
+    	MeasurementApplication.Inches i2 = new MeasurementApplication.Inches(10.5);
+
+
+
+        assertEquals(i1, i2);
+
+    }
+
+
+
+    @Test
+
+    void testInchesEquality_DifferentValue() {
+
+    	MeasurementApplication.Inches i1 = new MeasurementApplication.Inches(10.5);
+
+    	MeasurementApplication.Inches i2 = new MeasurementApplication.Inches(5.2);
+
+
+
+        assertNotEquals(i1, i2);
+
+    }
+
+
+
+    @Test
+
+    void testInchesEquality_NullValue() {
+
+    	MeasurementApplication.Inches i1 = new MeasurementApplication.Inches(7.0);
+
+
+
+        assertNotEquals(i1, null);
+
+    }
+
+
+
+    @Test
+
+    void testInchesEquality_DifferentType() {
+
+    	MeasurementApplication.Inches i1 = new MeasurementApplication.Inches(7.0);
+
+        String other = "7.0";
+
+
+
+        assertNotEquals(i1, other);
+
+    }
+
+
 }
