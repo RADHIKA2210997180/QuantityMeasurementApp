@@ -1,66 +1,86 @@
 package com.quantity.measurement.model;
+
 import com.quantity.measurement.enums.LengthUnit;
+
 
 
 public class QuantityLength {
 
-    private double value;
-
-    private LengthUnit unit;
 
 
+	private static final double EPSILON = 1e-6;
 
-    public QuantityLength(double value, LengthUnit unit) {
+	 private double value;
 
-        if (unit == null) {
+	    private LengthUnit unit;
 
-            throw new IllegalArgumentException("Unit cannot be null");
+	  public QuantityLength(double value, LengthUnit unit) {
 
-        }
+	        if (unit == null) {
 
-        this.value = value;
-
-        this.unit = unit;
-
-    }
-
-    
-
-    public double toFeet() {
-
-        return unit.toFeet(value);
-
-    }
+	            throw new IllegalArgumentException("Unit cannot be null");
 
 
 
-    @Override
-
-    public boolean equals(Object obj) {
-
-        if (this == obj) return true;
-
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        QuantityLength other = (QuantityLength) obj;
-
-        double thisInFeet=this.unit.toFeet(this.value);
-
-        double otherInFeet=other.unit.toFeet(other.value);
-
-        return Double.compare(thisInFeet,otherInFeet) == 0;
-
-    }
+	        }
 
 
 
-    @Override
+	        this.value = value;
 
-    public String toString() {
+	        this.unit = unit;
 
-        return value + " " + unit.name();
+	    }
 
-    }
+//	    public double toFeet() {
+
+//	        return unit.toFeet(value);
+
+//
+
+//	    }
+
+
+
+	    @Override
+
+	    public boolean equals(Object obj) {
+
+	        if (this == obj) return true;
+
+	        if (obj == null || getClass() != obj.getClass()) return false;
+
+	        QuantityLength other = (QuantityLength) obj;
+
+	        double thisInFeet=this.unit.toFeet(this.value);
+
+
+
+	        double otherInFeet=other.unit.toFeet(other.value);
+
+
+
+	        return Math.abs(thisInFeet - otherInFeet) < EPSILON ;
+
+
+
+	    }
+
+
+
+	    @Override
+
+
+
+	    public String toString() {
+
+
+
+	        return value + " " + unit.name();
+
+
+
+	    }
 
 }
 
