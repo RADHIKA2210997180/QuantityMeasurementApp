@@ -13,7 +13,7 @@ import java.util.Objects;
 	    public Quantity(double value, U unit) {
 	        if (unit == null)
 	            throw new NullPointerException("Unit shouldn't be null");
-	        if (Double.isNaN(value))
+	        if (Double.isFinite(value))
 	            throw new IllegalArgumentException("Invalid value");
 
 	        this.value = value;
