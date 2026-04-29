@@ -4,6 +4,8 @@ import com.quantity.measurement.enums.WeightUnit;
 
 public class QuantityWeight {
 
+
+
         private final Quantity<WeightUnit> quantity;
 
         public QuantityWeight(double value, WeightUnit unit) {
@@ -38,8 +40,6 @@ public class QuantityWeight {
         }
         return this.quantity.equals(((QuantityWeight) o).quantity);
     }
-
-
 //    public Quantity<IMeasurable> convertTo(WeightUnit weightUnit) {
 //    }
 }
