@@ -1,7 +1,6 @@
 package QuantityMeasurementApp;
 
-import com.quantity.measurement.enums.LengthUnit;
-
+import com.quantity.measurement.enumImpl.LengthUnit;
 import com.quantity.measurement.model.QuantityLength;
 
 import java.util.Scanner;

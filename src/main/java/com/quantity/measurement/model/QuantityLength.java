@@ -1,6 +1,6 @@
 package com.quantity.measurement.model;
 
-import com.quantity.measurement.enums.LengthUnit; // ✅ FIXED
+import com.quantity.measurement.enumImpl.LengthUnit;
 
 public class QuantityLength {
 
