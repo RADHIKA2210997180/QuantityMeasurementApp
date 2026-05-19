@@ -1,5 +1,6 @@
 package com.quantity.measurement.repositoryImpl;
 
+import java.lang.annotation.Annotation;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,7 +19,6 @@ import com.quantity.measurement.repository.Repository;
 /**
  * JDBC-based repository implementation.
  */
-@org.springframework.stereotype.Repository
 public class DatabaseRepository implements Repository {
 
     private static final Logger LOGGER =
